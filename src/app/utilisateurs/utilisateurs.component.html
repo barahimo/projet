@@ -1,0 +1,28 @@
+<div class="container">
+    <form action="">
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" class="form-control" [(ngModel)]="user.name" name="name" id="name" placeholder="name">
+        </div>
+        <div class="form-group">
+            <label for="email">email</label>
+            <input type="text" class="form-control" [(ngModel)]="user.email" name="email" id="email"
+                placeholder="email">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="createUser()" *ngIf="status">Add</button>
+        <button type="button" class="btn btn-secondary" (click)="updateUser()" *ngIf="!status">Update</button>
+    </form>
+    <hr>
+    <p>{{user | json}}</p>
+    <hr>
+    <ul *ngFor="let user of users">
+        <li>ID : {{user.id}}</li>
+        <li>Name : {{user.name}}</li>
+        <li>Email : {{user.email}}</li>
+        <p>
+            <button type="button" class="btn btn-warning" (click)="editUser(user)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+        </p>
+        <hr>
+    </ul>
+</div>

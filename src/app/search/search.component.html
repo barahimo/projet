@@ -1,0 +1,9 @@
+<i class="fas" style="font-size:120px" [class.fa-search-plus]="status" [class.fa-search-minus]="!status"
+    (click)="onClickIcone()"></i>
+
+<button class="btn" [ngClass]="{
+    'btn-warning':status,
+    'btn-danger':!status 
+}" [ngStyle]="{
+    'fontSize':status ? '20pt' : '10pt'
+}" (click)="onClickIcone()">Cliquer</button>

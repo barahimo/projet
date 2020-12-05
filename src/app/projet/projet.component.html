@@ -1,0 +1,19 @@
+<p [textContent]="source"></p>
+<p [textContent]="body | resume:10"></p>
+<search></search>
+<br>
+<br>
+<br>
+<br>
+<p>-----------</p>
+<input [(ngModel)]="name" #myVar>
+<p style="color: red;">{{myVar.value}}</p>
+<p style="color: blue;">{{name}}</p>
+<button on-click="load(myVar)">load</button>
+<p>-----------</p>
+<input (ngModel)="email0" (keyup.enter)="onKeyUp0(email0)">
+<br>
+<input value={{email1}} #email (keyup.enter)="onKeyUp1(email)">
+<br>
+<input [value]="email2" (keyup.enter)="onKeyUp2(email2)">
+<p>-----------</p>
